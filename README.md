@@ -10,8 +10,11 @@ $ testrpc
 $ geth attach http://localhost:8545
 ## In geth console
 > abi = <aicumen_sol_aicumen.abi>
+
 > bytecode = <"aicumen_sol_aicumen.bin">
+
 > aicumen = eth.contract(abi).new({from: eth.accounts[0], data: bytecode, gas: 3000000})
+
 > aicumen.address
 
 $ go run main.go aicumen.go
