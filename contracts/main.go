@@ -24,12 +24,12 @@ func main() {
 	if err != nil {
 		log.Fatalf("Failed to connect to the Ethereum client: %v", err)
 	}
-	var a = "0xB795527DF837AB9D1AF12f9DBe46F76293b917Fa"
+	var a = "0x319a59deC27B83F233C187D9926900a76226EF9F"
 	// Instantiate the contract and display its name
 
 	// fmt.Println("init")
 
-	var pk = "0x878919aA02f65661cBc5b700ecBdFe0bfB1FC313"
+	// var pk = "0x5caf8eb09302dab80df496639e0f5627710f8ee7"
 	privateKey, err := crypto.HexToECDSA("ce8bc723f8d6b873902f225fce6d3a6c8b58e14e9cfa2013775f17f92e85c748")
 	if err != nil {
 		log.Fatal(err)
@@ -40,6 +40,10 @@ func main() {
 	if !ok {
 		log.Fatal("error casting public key to ECDSA")
 	}
+
+	// var pk = hexutil.Encode(publicKeyECDSA)[4:]
+	var pk = crypto.PubkeyToAddress(*publicKeyECDSA).Hex()
+	// var pk = hex.EncodeToString(privk)
 
 	fromAddress := crypto.PubkeyToAddress(*publicKeyECDSA)
 	nonce, err := conn.PendingNonceAt(context.Background(), fromAddress)
