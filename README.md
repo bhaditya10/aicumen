@@ -19,9 +19,11 @@ $ geth attach http://localhost:8545
 
 ## Connect to Go-redis
 $ redis-server //terminal 1
+
 $ redis-cli //terminal 2
 
 $ go run main.go aicumen.go //from "contracts directory"
+
 $ get <Public Key> //from redis-cli terminal 2
 
 
