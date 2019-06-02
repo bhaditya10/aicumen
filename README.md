@@ -17,13 +17,15 @@ $ geth attach http://localhost:8545
 
 > aicumen.address
 
-## Connect to Go-redis
+## Connect to go-redis
 $ redis-server //terminal 1
 
 $ redis-cli //terminal 2
 
+## Insert data
 $ go run main.go aicumen.go //from "contracts directory"
 
-$ get <Public Key> //from redis-cli terminal 2
+## Fetch the data on go-redis 
+$ get <<Public Key>> //from redis-cli terminal 2
 
 
