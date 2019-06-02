@@ -3,7 +3,7 @@ $ abigen --sol=aicumen.sol --pkg=main --out=aicumen.go
 ## Generate abi
 $ solcjs --abi aicumen.sol
 ## Generate binary
-$ solcjs --bin aicumen.sol
+$ solcjs --bin aicumen.sol 
 ## Connect to network
 $ testrpc
 ## Attach geth to the network
@@ -17,6 +17,11 @@ $ geth attach http://localhost:8545
 
 > aicumen.address
 
-$ go run main.go aicumen.go
+## Connect to Go-redis
+$ redis-server //terminal 1
+$ redis-cli //terminal 2
+
+$ go run main.go aicumen.go //from "contracts directory"
+$ get <Public Key> //from redis-cli terminal 2
 
 
